@@ -5,9 +5,15 @@ lsp.preset('recommended')
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
+		'lua_ls',
+        'clangd',
 		'tsserver',
 		'eslint',
-		'lua_ls'
+        'julials',
+        'pyright',
+        'jsonls',
+        'yamlls',
+        'marksman',
 	},
 	handlers = {lsp.default_setup,},
 })
@@ -19,7 +25,6 @@ cmp.setup({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		['<C-Space>'] = cmp.mapping.complete(),
 	})
 })
 

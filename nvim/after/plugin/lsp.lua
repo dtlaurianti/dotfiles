@@ -4,6 +4,9 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+    sources = {
+        { name = "luasnip" },
+    },
 	ensure_installed = {
 		'lua_ls',
         'clangd',
@@ -24,10 +27,19 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	})
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+	}),
+    snippet = {
+        expand = function(args)
+            local luasnip = require("luasnip")
+            if not luasnip then
+                return
+            end
+            luasnip.lsp_expand(args.body)
+        end,
+    },
+    require("luasnip/loaders/from_vscode").lazy_load({}),
 })
-
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}

@@ -1,15 +1,17 @@
 return {
-	{
-		'nvim-telescope/telescope.nvim', version="0.1.4",
-		dependencies = { {'nvim-lua/plenary.nvim'} }
-	},
-	{
-		'folke/tokyonight.nvim',
-		name = 'tokyonight',
-		config = function()
-			vim.cmd('colorscheme tokyonight')
-		end
-	},
+    {
+        'nvim-telescope/telescope.nvim', version="0.1.4",
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        }
+    },
+    {
+        'folke/tokyonight.nvim',
+        name = 'tokyonight',
+        config = function()
+            vim.cmd('colorscheme tokyonight')
+        end
+    },
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
@@ -17,16 +19,16 @@ return {
             'nvim-treesitter/playground',
         },
     },
-	'theprimeagen/harpoon',
-	'mbbill/undotree',
-	'tpope/vim-fugitive',
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
-		dependencies = {
-			--- manage LSP servers from neovim
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+    'theprimeagen/harpoon',
+    'mbbill/undotree',
+    'tpope/vim-fugitive',
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        dependencies = {
+            --- manage LSP servers from neovim
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
             -- LSP Support
             {'neovim/nvim-lspconfig'},
@@ -63,4 +65,8 @@ return {
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
     },
+    -- view registers with ""
+    'gennaro-tedesco/nvim-peekup',
+    -- quick movement
+    'ggandor/leap.nvim',
 }

@@ -69,4 +69,6 @@ return {
     'gennaro-tedesco/nvim-peekup',
     -- quick movement
     'ggandor/leap.nvim',
+    -- autoformatting
+    'sbdchd/neoformat',
 }

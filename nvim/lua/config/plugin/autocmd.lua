@@ -1,3 +1,4 @@
+-- autogenerate on save
 local commands = {
     [".tex"] = "pdflatex %",  -- Use '%' to represent the current file path
 }
@@ -15,3 +16,6 @@ function on_write_file()
 end
 
 vim.api.nvim_command('autocmd BufWritePost * :lua on_write_file()')
+
+-- autoformat on save
+vim.api.nvim_command('autocmd BufWritePre * undojoin | Neoformat')

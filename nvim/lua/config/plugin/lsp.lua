@@ -55,4 +55,3 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-return {}

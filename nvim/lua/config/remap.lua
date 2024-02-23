@@ -27,12 +27,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- popup virtual error message
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
-
--- prettier format
-function PrettierFormat()
-  vim.cmd ':w!'
-  vim.cmd '!npx prettier --write %'
-  vim.cmd ':e'
-end
-
-vim.keymap.set("n", "<leader>f", PrettierFormat, { noremap = true })

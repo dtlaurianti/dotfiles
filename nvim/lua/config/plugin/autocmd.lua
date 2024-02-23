@@ -15,5 +15,3 @@ function on_write_file()
 end
 
 vim.api.nvim_command('autocmd BufWritePost * :lua on_write_file()')
-
-return {}

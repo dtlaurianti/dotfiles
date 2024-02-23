@@ -4,4 +4,3 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
-return {}

@@ -3,3 +3,8 @@ add_newline = false
 [directory]
 truncation_length = 0
 truncate_to_repo = false
+
+
+# Show ahead/behind count
+[git_metrics]
+disabled = false

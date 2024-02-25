@@ -1,9 +1,6 @@
 -- map space to <leader>
 vim.g.mapleader = " "
 
--- go to netrw explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- maintain cursor centeredness
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -27,3 +24,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- popup virtual error message
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
+
+-- oil filesystem navigation
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

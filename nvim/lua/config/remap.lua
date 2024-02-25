@@ -27,3 +27,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
 -- oil filesystem navigation
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- remap window split
+vim.api.nvim_set_keymap('n', '<C-w>h', ':split<CR>', { noremap = true, silent = true })

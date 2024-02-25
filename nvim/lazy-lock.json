@@ -21,7 +21,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "d5b6d4366dfd7a1071b930defd365e6d0be258de" },
   "nvim-peekup": { "branch": "master", "commit": "82251c54cd60f8504dfd9acd853eae57fe832447" },
   "nvim-surround": { "branch": "main", "commit": "703ec63aa798e5e07d309b35e42def34bebe0174" },
-  "nvim-treesitter": { "branch": "master", "commit": "9ecf980277d70f5a540b4e8deaace708432d54c0" },
+  "nvim-treesitter": { "branch": "master", "commit": "adf72368f6af026b4cd19851d34a313a54159857" },
   "nvim-web-devicons": { "branch": "master", "commit": "14ac5887110b06b89a96881d534230dac3ed134d" },
   "onedark.nvim": { "branch": "main", "commit": "3bb90d03dfe31a87d61d706a21666d1877d8358b" },
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
@@ -30,6 +30,5 @@
   "tokyonight": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "undotree": { "branch": "master", "commit": "9dbbf3b7d19dda0d22ceca461818e4739ad8154d" },
   "vim-fugitive": { "branch": "master", "commit": "011cf4fcb93a9649ffc6dcdff56ef948f5d0f7cc" },
-  "vimtex": { "branch": "master", "commit": "01c4c167338b74dc0c30621841bc548b52e96330" },
-  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
+  "vimtex": { "branch": "master", "commit": "01c4c167338b74dc0c30621841bc548b52e96330" }
 }

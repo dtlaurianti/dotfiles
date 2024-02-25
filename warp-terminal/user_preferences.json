@@ -1,0 +1,13 @@
+{
+  "prefs": {
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"OpenWarpDrive\"},{\"Action\":\"WarpAI\"}]",
+    "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-02-26T05:45:16.493651Z\"}",
+    "Shortcuts": "true",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "OpenWindowsAtCustomSize": "false",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "ExperimentId": "ae4f0f8b-8d9e-4998-96a5-a7adab4000b8",
+    "FontSize": "13.0",
+    "HasDismissedWarpDriveWelcome": "true"
+  }
+}

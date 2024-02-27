@@ -22,13 +22,7 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
 cmp.setup({
-	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<Tab>'] = cmp.mapping.confirm({ select = true }),
-	}),
     snippet = {
         expand = function(args)
             local luasnip = require("luasnip")

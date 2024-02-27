@@ -1,8 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
-- /root/.config
 - /root/git/SleepTrak
+- /root/.config
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- git rebase -i
+- w
+- yarn install
+- git stash pop
 hidecommandlog: false
 ignorewhitespaceindiffview: false

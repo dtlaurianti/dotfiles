@@ -23,6 +23,10 @@ alias lz='lazygit'
 alias dc='docker compose'
 alias dcub='docker compose up --build'
 
+# nixos
+alias nrs='sudo nixos-rebuild switch'
+alias nxc='sudo nvim /etc/nixos/'
+
 # other
 alias nv='nvim .'
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"

@@ -86,15 +86,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 # Start SSH Agent
 #----------------------------
 
@@ -146,10 +137,6 @@ eval "$(starship init bash)"
 export EDITOR="/usr/local/bin/nvim"
 . "$HOME/.cargo/env"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # node
 export NODE_ENV='development'
 
@@ -169,52 +156,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 
-export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
-
-autonvm() {
-	nvm_path=$(nvm_find_up .nvmrc | tr -d '\n')
-
-	# If there are no .nvmrc file, use the default nvm version
-	if [[ ! $nvm_path = *[^[:space:]]* ]]; then
-
-		if [[ -z $nvm_default_version ]]; then
-			nvm_default_version=$(nvm version default);
-		fi
-
-		# If there is no default version, set it to `node`
-		# This will use the latest version on your machine
-		if [[ $nvm_default_version == "N/A" ]]; then
-			nvm alias default node;
-			nvm_default_version=$(nvm version default);
-		fi
-
-		# If the current version is not the default version, set it to use the default version
-		if [[ $(nvm current) != $nvm_default_version ]]; then
-			nvm use default;
-		fi
-
-	elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
-		nvm_version=$(<"$nvm_path"/.nvmrc)
-
-		# `nvm ls` will check all locally-available versions
-		# If there are multiple matching versions, take the latest one
-		# Remove the `->` and `*` characters and spaces
-		# `nvm_local_version` will be `N/A` if no local versions are found
-		if [[ -z $nvm_local_version ]]; then
-			nvm_local_version=$(nvm ls --no-colors "$nvm_version" | tail -1 | tr -d '\->*' | tr -d '[:space:]')
-		fi
-
-		# If it is not already installed, install it
-		# `nvm install` will implicitly use the newly-installed version
-		if [[ "$nvm_local_version" == "N/A" ]]; then
-			nvm install "$nvm_version";
-		elif [[ $(nvm current) != "$nvm_local_version" ]]; then
-			nvm use "$nvm_version";
-		fi
-	fi
-}
-export PROMPT_COMMAND="autonvm; $PROMPT_COMMAND"
 
 # tmuxifier
 export PATH="$PATH:$HOME/.config/tmux/plugins/tmuxifier/bin"

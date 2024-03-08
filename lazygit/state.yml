@@ -1,12 +1,15 @@
 lastupdatecheck: 0
 recentrepos:
+- /root/git/text-tetris
 - /root/git/SleepTrak
 - /root/.config
 startuppopupversion: 5
 customcommandshistory:
+- git checkout -- test/api/plans.test.ts
 - git rebase -i
 - w
 - yarn install
 - git stash pop
+- git checkout -- backend/test/api/plans.test.ts
 hidecommandlog: false
 ignorewhitespaceindiffview: false

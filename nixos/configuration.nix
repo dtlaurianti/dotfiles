@@ -108,7 +108,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    which file tree
+    which file tree xclip
     wget curl
     lsd bat jq ripgrep fzf
     autojump

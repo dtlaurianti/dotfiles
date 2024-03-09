@@ -70,7 +70,7 @@ fi
 
 # add ssh-keys at startup
 if ! ssh-add -l | grep -q "RSA"; then
-	ssh-add /root/.ssh/nix_rsa
+	ssh-add ~/.ssh/nix_rsa
 fi
 
 # activate autojump

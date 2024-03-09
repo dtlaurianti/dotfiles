@@ -109,7 +109,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     which file tree xclip
-    wget curl
+    wget curl mailutils
     lsd bat jq ripgrep fzf
     autojump
     tldr

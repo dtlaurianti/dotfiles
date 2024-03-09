@@ -74,7 +74,7 @@ if ! ssh-add -l | grep -q "RSA"; then
 fi
 
 # activate autojump
-. /usr/share/autojump/autojump.sh
+source /run/current-system/sw/share/autojump/autojump.bash
 
 # set bat theme
 export BAT_THEME="tokyonight_night"
@@ -87,7 +87,6 @@ eval "$(starship init bash)"
 
 # set editor to neovim
 export EDITOR="/usr/local/bin/nvim"
-. "$HOME/.cargo/env"
 
 # node
 export NODE_ENV='development'

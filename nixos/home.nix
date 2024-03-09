@@ -13,11 +13,6 @@
         userEmail = "dtlaurianti@gmail.com";
     };
 
-    programs.bash = {
-        enable = true;
-        enableCompletion = true;
-    };
-    
     home.stateVersion = "23.11";
 
     programs.home-manager.enable = true;

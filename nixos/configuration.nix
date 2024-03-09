@@ -3,11 +3,13 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
-{
+let
+    kmonad =  import ./home/kmonad.nix;
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../kmonad/nix/nixos-module.nix
     ];
 
   # Bootloader.
@@ -48,7 +50,6 @@
       xkbModel = "pc86";
       layout = "us";
       xkbVariant = "";
-      xkbOptions = "caps:swapescape";
   };
 
   # Enable the GNOME Desktop Environment.
@@ -82,11 +83,56 @@
   users.users.dtl = {
     isNormalUser = true;
     description = "Dylan Laurianti";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
     ];
+  };
+
+  # kmonad config
+  users.groups = { uinput = {}; };
+
+  services.udev.extraRules =
+    ''
+      # KMonad user access to /dev/uinput
+      KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+    '';
+
+     services.kmonad = {
+     enable = true;
+     keyboards = {
+ 	  kcq1 = {
+ 	    device = "/dev/input/by-id/usb-Keychron_Keychron_Q1-event-kbd";
+ 	    config = ''
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-Keychron_Keychron_Q1-event-kbd")
+  output (uinput-sink "KMonad kbd")
+  fallthrough true
+  )
+
+(defsrc
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    del
+  `     1    2    3    4    5    6    7    8    9    0    -     =      bspc              pgup
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]      \                 pgdn
+  caps  a    s    d    f    g    h    j    k    l    ;    '     ret                      ins
+  lsft  z    x    c    v    b    n    m    ,    .    /    rsft         up
+  lctl  lmet lalt      spc       cmp  ralt rctl                 left   down   rght
+  )
+
+(deflayer base
+  caps  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    del
+  `     1    2    3    4    5    6    7    8    9    0    -     =      bspc              pgup
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]      \                 pgdn
+  esc   a    s    d    f    g    h    j    k    l    ;    '     ret                      ins
+  lsft  z    x    c    v    b    n    m    ,    .    /    rsft         up
+  lctl  lmet lalt      spc       cmp  ralt rctl                 left   down   rght
+  )
+
+		    '';
+ 	  };
+     }; 
+	package = import ./home/kmonad.nix;
   };
 
   # Enable automatic login for the user.
@@ -118,6 +164,7 @@
     vim neovim
     neofetch htop iotop iftop
     nix-output-monitor
+    kmonad
 
     gcc
     rustc cargo

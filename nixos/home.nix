@@ -21,11 +21,4 @@
     home.stateVersion = "23.11";
 
     programs.home-manager.enable = true;
-
-    services.xserver = {
-        model = "pc86";
-        layout = "us";
-        xkbVariant = "";
-        xkbOptions = "caps:swapescape";
-    };
 }

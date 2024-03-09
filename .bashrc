@@ -128,7 +128,7 @@ PS1='\[\e[32m\]\u@\h\[\e[39m\]:\[\e[94m\]\w \[\e[36m\]$(__git_ps1 "(%s)")\[\e[39
 export BAT_THEME="tokyonight_night"
 
 # set config location
-export XDG_CONFIG_HOME='/root/.config'
+export XDG_CONFIG_HOME='~/.config'
 
 # set prompt to starship
 eval "$(starship init bash)"

@@ -17,6 +17,8 @@ require('mason-lspconfig').setup({
         'jsonls',
         'yamlls',
         'marksman',
+        'dockerls',
+        'docker_compose_language_service',
 	},
 	handlers = {lsp.default_setup,},
 })

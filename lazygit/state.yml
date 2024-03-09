@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
-- /root/git/text-tetris
 - /root/git/SleepTrak
 - /root/.config
+- /root/git/text-tetris
 startuppopupversion: 5
 customcommandshistory:
 - git checkout -- test/api/plans.test.ts

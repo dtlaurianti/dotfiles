@@ -4,11 +4,11 @@
     nixConfig = {
         substituters = [
             "https://cache.nixos.org"
-            "https://nix-community.cachix.org"
+                "https://nix-community.cachix.org"
         ];
         trusted-public-keys = [
             "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-            "nix-community.cachix.org-1:mD9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+                "nix-community.cachix.org-1:mD9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         ];
     };
 
@@ -23,20 +23,20 @@
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
         nixosConfigurations = {
-            dtl = nixpkgs.lib.nixosSystem {
+            nixos = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
                     ./hardware-configuration.nix
-                    ./configuration.nix
-                    {
-                        nix.settings.trusted-users = [ "dtl" ];
-                    }
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.dtl = import ./home.nix;
-                    }
+                        ./configuration.nix
+                        {
+                            nix.settings.trusted-users = [ "dtl" ];
+                        }
+                home-manager.nixosModules.home-manager
+                {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.dtl = import ./home.nix;
+                }
                 ];
             };
         };

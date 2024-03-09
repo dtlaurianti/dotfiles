@@ -17,7 +17,8 @@ require('mason-lspconfig').setup({
         'jsonls',
         'yamlls',
         'marksman',
-        'rnix',
+        'nil_ls',
+        'bashls',
 	},
 	handlers = {lsp.default_setup,},
 })

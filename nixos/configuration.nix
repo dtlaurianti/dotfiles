@@ -48,8 +48,10 @@
       xkbModel = "pc86";
       layout = "us";
       xkbVariant = "";
-      xkbOptions = "caps:swapescape";
   };
+
+  # keyboard configuration
+  services.keyd.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -112,12 +114,13 @@
     autojump
     tldr
     zip unzip zstd
-    starship
+    kitty starship
     tmux tmuxifier
     git lazygit git-graph
     vim neovim
     neofetch htop iotop iftop
     nix-output-monitor
+    keyd
 
     gcc
     rustc cargo

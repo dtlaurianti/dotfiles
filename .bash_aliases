@@ -25,6 +25,7 @@ alias dcub='docker compose up --build'
 
 # nixos
 alias nrs='sudo nixos-rebuild switch'
+alias nrsf='sudo nixos-rebuild switch --flake .#$USER'
 alias nxc='sudo nvim /etc/nixos/'
 
 # other

@@ -36,6 +36,7 @@
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
                     home-manager.users.dtl = import ./home.nix;
+                    home-manager.backupFileExtension = "backup";
                 }
                 ];
             };

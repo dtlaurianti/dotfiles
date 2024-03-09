@@ -79,6 +79,8 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.groups = { uinput = {}; };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dtl = {
     isNormalUser = true;
@@ -86,17 +88,16 @@ in {
     extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
     packages = with pkgs; [
       firefox
+      brave
     #  thunderbird
     ];
   };
 
   # kmonad config
-  users.groups = { uinput = {}; };
-
   services.udev.extraRules =
     ''
       # KMonad user access to /dev/uinput
-      KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+      KERNEL=="uinput", MODE="0660", GROUP="uinput", TAG+="uaccess", OPTIONS+="static_node=uinput"
     '';
 
      services.kmonad = {

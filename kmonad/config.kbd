@@ -10,7 +10,7 @@
   tab   q    w    e    r    t    y    u    i    o    p    [     ]      \                 pgdn
   caps  a    s    d    f    g    h    j    k    l    ;    '     ret                      ins
   lsft  z    x    c    v    b    n    m    ,    .    /    rsft         up
-  lctl  lmet lalt      spc       cmp  ralt rctl                 left   down   rght
+  lctl  lmet lalt      spc            home ralt rctl            left   down   rght
   )
 
 (deflayer base
@@ -19,5 +19,5 @@
   tab   q    w    e    r    t    y    u    i    o    p    [     ]      \                 pgdn
   esc   a    s    d    f    g    h    j    k    l    ;    '     ret                      ins
   lsft  z    x    c    v    b    n    m    ,    .    /    rsft         up
-  lctl  lmet lalt      spc       cmp  ralt rctl                 left   down   rght
-  )
+  lctl  lmet lalt      spc            home ralt rctl            left   down   rght
+)

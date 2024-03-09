@@ -106,15 +106,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    which file tree
     wget curl
-    lsd bat jq ripgrep
+    lsd bat jq ripgrep fzf
     autojump
     tldr
-    zip unzip
+    zip unzip zstd
     starship
     tmux tmuxifier
     git lazygit git-graph
     vim neovim
+    neofetch htop iotop iftop
+    nix-output-monitor
 
     gcc
     rustc cargo

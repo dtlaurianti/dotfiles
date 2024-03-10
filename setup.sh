@@ -16,6 +16,6 @@ sudo rm /etc/nixos/flake.nix
 sudo ln -s /home/$SUDO_USER/.config/nixos/flake.nix /etc/nixos/flake.nix
 # keyd configs
 sudo rm /etc/keyd/default.conf
-sudo ln -s /home/$SUDO_USER/.config/keyd/default.conf /etc/keyd/default.conf
+sudo cp /home/$SUDO_USER/.config/keyd/default.conf /etc/keyd/default.conf
 # bat themes
 bat cache --build

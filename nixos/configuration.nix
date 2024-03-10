@@ -51,7 +51,18 @@
     };
 
 # keyboard configuration
-    services.keyd.enable = true;
+    systemd.services = {
+        keyd = {
+            enable = true;
+            description = "keyd key remapping daemon";
+            serviceConfig = {
+                User = "root";
+# the command to execute when the service starts up 
+                ExecStart = ''${pkgs.keyd}/bin/keyd'';
+            };
+            wantedBy = [ "multi-user.target" ];
+        };
+    };
 
 # Enable the GNOME Desktop Environment.
     services.xserver.displayManager.gdm.enable = true;

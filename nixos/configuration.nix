@@ -114,7 +114,14 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
+
+    nixpkgs.config = {
+        allowUnfree = true;
+        imports = [
+            ./home/tmux.nix
+        ];
+    };
+
 
 # List packages installed in system profile. To search, run:
 # $ nix search wget

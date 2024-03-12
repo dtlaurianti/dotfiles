@@ -58,6 +58,16 @@ return {
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
     },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+        }
+    },
     -- view registers with ""
     'gennaro-tedesco/nvim-peekup',
     -- quick movement

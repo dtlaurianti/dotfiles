@@ -1,10 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
-- /root/git/text-tetris
 - /root/git/SleepTrak
+- /root/git/text-tetris
+- /root/git/ObsidianVault
 - /root/.config
 startuppopupversion: 5
 customcommandshistory:
+- q
 - git checkout -- test/api/plans.test.ts
 - git rebase -i
 - w

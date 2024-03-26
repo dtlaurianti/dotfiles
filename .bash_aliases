@@ -28,3 +28,4 @@ alias nv='nvim .'
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias y='yarn'
+alias fd='fdfind'
